@@ -1,0 +1,10 @@
+_build/
+_target/
+.mooncakes/
+tmp/
+work/
+.venv/
+__pycache__/
+*.pyc
+!/.moonbit-version
+!/.moonignore

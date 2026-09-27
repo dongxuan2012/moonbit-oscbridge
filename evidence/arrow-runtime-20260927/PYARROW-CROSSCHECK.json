@@ -1,0 +1,85 @@
+{
+  "result": "PASS",
+  "source": {
+    "dataset": "OscGrid Labeled_raw_v1.1, fixed COMTRADE pair",
+    "upstream": {
+      "repository": "https://github.com/AIRI-Institute/oscgrid/tree/4cbdf81f9a05f646b5e4ee508e273a7b8e92b056",
+      "archive": "https://doi.org/10.6084/m9.figshare.28465427.v6",
+      "archiveSha256": "33a9fae8e21446b40a3099e6ffa733b679af4f3df4d4ce90aa4b06aeddf45ff8",
+      "license": "CC BY 4.0"
+    },
+    "recordRelativePath": "Labeled_raw_v1.1/4bbe281f8abafac243fafb0a0c2f047c",
+    "cfg": {
+      "sha256": "656bc0a07bb4c422bd4bd3e14fd607dfd668fe8d0362c28c4c95e73096f36de2",
+      "bytes": 1580
+    },
+    "dat": {
+      "sha256": "e968ea9567684117d189e74dec622bf417ead6f2611105a82a6f6c5029185253",
+      "bytes": 1005421
+    },
+    "rows": 10400,
+    "analogChannels": 12,
+    "statusChannels": 13,
+    "timeRangeSeconds": [
+      0.0,
+      6.499375
+    ],
+    "datTickTimeRangeSeconds": [
+      0.0,
+      6.499375
+    ],
+    "maxAbsDifferenceReaderSampleRateVsDatTickTime": 0.0,
+    "missingAnalogMarkerObserved": false,
+    "sourceStartDateRaw": "01/01/0001, 01:01:01.000000",
+    "sourceTriggerDateRaw": "01/01/0001, 01:01:01.000000",
+    "timeMultiplier": 1.0
+  },
+  "reference": {
+    "comtrade": "0.1.2",
+    "pyarrow": "25.0.1",
+    "python": "3.12.14"
+  },
+  "ipc": {
+    "full": {
+      "path": "D:\\CodexLocal\\ban\\work\\substantive-20260927\\oscbridge-prototype\\evidence\\arrow-runtime-20260927\\full.arrow",
+      "sha256": "64331726deea9fc43411bad998e0d6de097ce879cb4e9841b029a9f14c1fa6fb",
+      "bytes": 2307450,
+      "rows": 10400,
+      "columns": 40
+    },
+    "window_1_1_1": {
+      "path": "D:\\CodexLocal\\ban\\work\\substantive-20260927\\oscbridge-prototype\\evidence\\arrow-runtime-20260927\\window-1-1-1.arrow",
+      "sha256": "6caef4c354ab2baeb115cbef6e9d2399a457042dffb3a48654fa1c124202497d",
+      "bytes": 119930,
+      "rows": 160
+    },
+    "empty_1_1": {
+      "path": "D:\\CodexLocal\\ban\\work\\substantive-20260927\\oscbridge-prototype\\evidence\\arrow-runtime-20260927\\empty-1-1.arrow",
+      "sha256": "657f2a2b3a6d118eb367560eb3f2fbe6c11178d7910434535dc16107d74bfcae",
+      "bytes": 85698,
+      "rows": 0
+    }
+  },
+  "comparisons": {
+    "sample_numbers": 10400,
+    "raw_dat_ticks": 10400,
+    "relative_times": 10400,
+    "relative_time_checked_against_raw_DAT_ticks": 10400,
+    "analog_raw_values": 124800,
+    "analog_scaled_against_formula_and_comtrade": 124800,
+    "status_values_against_dat_and_comtrade": 135200,
+    "window_rows": 160,
+    "left_boundary_1_0_included": true,
+    "right_boundary_1_1_excluded": true,
+    "empty_window_has_same_fields_and_metadata": true,
+    "reader_time_basis_note": "comtrade 0.1.2 reconstructs this single-rate time axis from sample index/rate; DAT-tick formula was independently checked as well"
+  },
+  "scopeLimits": [
+    "This one anonymized public record does not validate all COMTRADE revisions or DAT encodings.",
+    "The record's start timestamp is year 0001; no absolute UTC or real event-time claim is made.",
+    "The record-specific class label was not cross-checked against a fault diagnosis.",
+    "Missing sample timestamps and malformed/dynamic inputs are outside this independent data comparison.",
+    "The fixed source has no 99999 analog missing marker; marker/null behavior is not validated here.",
+    "PyArrow and Python comtrade are verification tools only, not the MoonBit runtime core."
+  ]
+}

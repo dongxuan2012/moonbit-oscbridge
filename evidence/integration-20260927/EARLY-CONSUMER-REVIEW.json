@@ -1,0 +1,74 @@
+{
+  "reviewDate": "2026-09-27",
+  "conclusion": {
+    "localConsumerGate": "pass",
+    "statement": "An independent external MoonBit module successfully consumed parse, write_window, and read_file on JS and WasmGC with a synthetic record.",
+    "scopeBoundary": "This is local module/API closure only, not full real-record validation or independent Arrow interoperability."
+  },
+  "consumer": {
+    "path": "D:/CodexLocal/ban/work/substantive-20260927/oscbridge-consumer",
+    "files": [
+      {"path": "moon.mod.json", "sha256": "26202CB6A7BF40AE78759943EA7B6F3910A99662859ECBBA2EA3EA2C1C47C029"},
+      {"path": "moon.pkg", "sha256": "00A2D5B30019EF610006F72B26BC59E5BB4D4DB0CE132E989EB3A42685D02767"},
+      {"path": "consumer_test.mbt", "sha256": "4BEBCA7834B19705F34B290EBEEC596B13B8EB0A686EE030C51B049FBF375819"}
+    ],
+    "syntheticInput": {
+      "revision": 1999,
+      "encoding": "ASCII",
+      "samples": 3,
+      "sampleRateHz": 1000,
+      "analogChannels": 1,
+      "statusChannels": 1,
+      "window": "[0.001,0.003)",
+      "expectedOriginalSampleNumbers": [2, 3],
+      "expectedRawTicks": [1000, 2000]
+    }
+  },
+  "commands": [
+    {"command": "moon test --target js", "exitCode": 0, "result": "1 passed, 0 failed"},
+    {"command": "moon test --target wasm-gc", "exitCode": 0, "result": "1 passed, 0 failed", "warnings": "unused_package warnings during fresh package check; test succeeded"}
+  ],
+  "roundtripAssertions": {
+    "columns": ["sample_number", "raw_ticks", "relative_seconds", "analog_001_raw", "analog_001_scaled", "status_001"],
+    "sampleNumbers": [2, 3],
+    "rawTicks": [1000, 2000],
+    "relativeSeconds": [0.001, 0.002],
+    "analogRaw": [4, 5],
+    "analogScaled": [9, 11],
+    "status": [true, false],
+    "metadataChecked": ["profile", "window rows", "DAT tick unit", "primary", "secondary", "P/S side", "engineering unit", "scaled value semantics"]
+  },
+  "dependencies": {
+    "prototype": {
+      "module": "localreview/oscbridge",
+      "versionInLocalMoonMod": "0.1.0",
+      "path": "D:/CodexLocal/ban/work/substantive-20260927/oscbridge-prototype",
+      "registryInstalled": false,
+      "sourceFiles": [
+        {"path": "moon.mod", "sha256": "F7E75C801757F3B375FF990C9ED3C94F35F918EE5EFE3D72447377B8E6FE61E9"},
+        {"path": "parse.mbt", "sha256": "4614A7D0DDD5DB2F2200421B6A4205C885F2D72A3763D9CECE5BE62066584113"},
+        {"path": "types.mbt", "sha256": "0152CDE5DE4C5A89E7293121BFFF4696ACF45C6D49CCAF167528EA28582428CA"},
+        {"path": "window.mbt", "sha256": "D38D12F1EC8CD8B32B6DA2009A80C793644BFC7EF0BB6DD75456F29484CB658B"},
+        {"path": "arrow/window_to_ipc.mbt", "sha256": "4891EF7DA2C89E046C58FEE657CA578441A9BA7BF175F235FD5E76FA11F5B2BE"}
+      ]
+    },
+    "arrow": {
+      "module": "shunge/arrow",
+      "version": "0.1.0",
+      "license": "MIT",
+      "path": "D:/CodexLocal/ban/work/substantive-20260927/oscbridge-prototype/.mooncakes/shunge/arrow",
+      "resolution": "Local path dependency; source copy, not freshly installed from Mooncakes registry",
+      "sourceFiles": [
+        {"path": "moon.mod", "sha256": "B70B81895ACE3C4FC26F2B3322FF080F9D6E11E98EC57284BAD2F8B86645543C"},
+        {"path": "pkg.generated.mbti", "sha256": "FBEF77B0A3FBCEEA67343EF3A9E30714E6F85276C0ECAB47F31E7B06D54F4C68"},
+        {"path": "ipc.mbt", "sha256": "A0EE0F6FB192D426B96FBE57F5700BD5B5EFF352D0C0589CA7524B1F536C3703"},
+        {"path": "types.mbt", "sha256": "1F7E9FE1256419311AD819E75C49F585C6D8FE4F3D73177BA3CB82369331F43C"}
+      ]
+    }
+  },
+  "hardEvidenceStillMissing": [
+    "Run the full fixed public CFG/DAT or an explicitly selected real-data window through the MoonBit chain and read back actual multi-channel identity, raw values, ticks, units, and metadata.",
+    "Open the exported IPC with an independent client such as PyArrow and compare schema and values; read_file belongs to the same MoonArrow implementation as write_file."
+  ],
+  "scope": "No core source edits, registry installation, broad tests, or edits to sealed artifacts."
+}

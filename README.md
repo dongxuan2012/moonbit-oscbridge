@@ -1,0 +1,47 @@
+# Oscbridge：COMTRADE 记录检查与 Arrow 窗口交换
+
+本地换题候选；尚未创建公开仓库。当前模块名 `localreview/oscbridge` 是本地验证名称，正式仓库、命名空间和报名换题由团队办理。
+
+将电力录波的一对 CFG/DAT 作为一个整体检查，按相对时间选择窗口，把样本身份、原始计数、声明侧标定值和状态字段交给现有 MoonArrow 写入 Arrow IPC。下游可以用已有 Arrow 工具消费数据，不必重新实现 COMTRADE 读取和单位映射。
+
+这里解决的是接收与交换中的可检查约束：错配的通道/行数、时间间隔不一致、无法表示的相邻时间、越界数值，以及窗口抽取后采样号和标定信息丢失。它不识别故障，不提供继电保护结论。
+
+## 与已有工作的关系
+
+|已有工作|复用或比较关系|
+|---|---|
+|[MoonArrow 0.1.0](https://mooncakes.io/docs/shunge/arrow@0.1.0)|运行时直接依赖，负责列类型、schema、IPC 编解码；不复制其实现|
+|[python-comtrade](https://github.com/dparrini/python-comtrade)|成熟的独立读取参考；本项目不是算法首创或对它的全面替代|
+|[OscGrid](https://github.com/AIRI-Institute/oscgrid)|已有 Python 数据处理和切窗流程；这里的增量是 MoonBit 可调用的数据合同与列式交换接口|
+|[PyArrow](https://arrow.apache.org/docs/python/)|独立读取并核对实际产出；仅用于验证，不进入产品运行核心|
+
+公开搜索没有找到同名 MoonBit 接口不能证明“生态空白”。本项目没有已确认采用方，公开研究数据也不冒充客户案例。支持范围、失败行为与未实现项见 [PROFILE.md](docs/PROFILE.md)。
+
+## 构建与调用
+
+已使用的 MoonBit 版本见 `.moonbit-version`。Node 文件入口要求 Node 24，Python 只用于复现独立验证。
+
+```sh
+moon update
+moon test --target js
+moon test --target wasm-gc
+moon build --target js --release cmd/arrow
+node bin/oscbridge.mjs export input.cfg input.dat new-window.arrow 1 1.1 10000
+```
+
+输出必须是新文件名，所在目录须存在并支持硬链接。窗口是 `[1,1.1)`；预算不足时报错，不截断。成功时 stdout 给出输入和 IPC 哈希回执，失败返回非零。
+
+MoonBit 程序导入根包与 `/arrow` 包即可使用，不必经过 Node 文件入口：
+
+```moonbit
+let recording = @oscbridge.parse(cfg_text, dat_text)
+let ipc = @oscbridge_arrow.write_window(recording, 1.0, 1.1, 10000)
+```
+
+上述代码位于可抛错函数中；导入别名分别配置为 `@oscbridge` 和 `@oscbridge_arrow`。调用方可先通过 `Recording::window` 检查窗口，再把 `Bytes` 交给自己的存储层。
+
+## 可复现输入与证据
+
+公开样本、许可、固定哈希与获取步骤见 [USE-CASE.md](USE-CASE.md)；核验状态只以 `evidence/` 中的实际回执为准。支持 COMTRADE-1999 ASCII 单速率、零 skew 的严格子集，保留 DAT 相对时间与 P/S 声明侧；不宣称完整标准兼容、UTC 对齐、全来源适配或真实用户采用。
+
+代码采用 MIT；公开输入及其派生 IPC 采用源数据 CC BY 4.0 要求。原始 95 MB 归档不随代码分发，署名与变换说明见 [THIRD-PARTY-NOTICES.md](THIRD-PARTY-NOTICES.md)。

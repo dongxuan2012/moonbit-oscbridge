@@ -1,0 +1,19 @@
+{
+  "result": "PASS",
+  "archive": "D:\\CodexLocal\\ban\\work\\substantive-20260927\\comtrade\\Labeled_raw_v1.1.7z",
+  "archiveSha256": "33a9fae8e21446b40a3099e6ffa733b679af4f3df4d4ce90aa4b06aeddf45ff8",
+  "doi": "10.6084/m9.figshare.28465427.v6",
+  "license": "CC BY 4.0",
+  "record": "Labeled_raw_v1.1/4bbe281f8abafac243fafb0a0c2f047c",
+  "samples": {
+    ".cfg": {
+      "path": "D:\\CodexLocal\\ban\\work\\substantive-20260927\\oscbridge-fetch-check\\sample.cfg",
+      "sha256": "656bc0a07bb4c422bd4bd3e14fd607dfd668fe8d0362c28c4c95e73096f36de2"
+    },
+    ".dat": {
+      "path": "D:\\CodexLocal\\ban\\work\\substantive-20260927\\oscbridge-fetch-check\\sample.dat",
+      "sha256": "e968ea9567684117d189e74dec622bf417ead6f2611105a82a6f6c5029185253"
+    }
+  },
+  "note": "Public anonymized record; no event diagnosis or UTC claim. See THIRD-PARTY-NOTICES.md."
+}

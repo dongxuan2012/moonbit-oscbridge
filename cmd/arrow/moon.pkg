@@ -1,0 +1,13 @@
+import {
+  "localreview/oscbridge" @comtrade,
+  "localreview/oscbridge/arrow" @adapter,
+  "moonbitlang/core/debug",
+}
+
+supported_targets = "js"
+
+pkgtype(kind: "executable")
+
+options(
+  link: { "js": { "exports": [ "export_arrow_ipc" ], "format": "esm" } },
+)

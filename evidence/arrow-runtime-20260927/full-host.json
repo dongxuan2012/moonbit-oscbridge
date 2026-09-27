@@ -1,0 +1,22 @@
+{
+  "output": "D:\\CodexLocal\\ban\\work\\substantive-20260927\\oscbridge-prototype\\evidence\\arrow-runtime-20260927\\full.arrow",
+  "bytes": 2307450,
+  "sha256": "64331726deea9fc43411bad998e0d6de097ce879cb4e9841b029a9f14c1fa6fb",
+  "source": {
+    "cfg": {
+      "bytes": 1580,
+      "sha256": "656bc0a07bb4c422bd4bd3e14fd607dfd668fe8d0362c28c4c95e73096f36de2"
+    },
+    "dat": {
+      "bytes": 1005421,
+      "sha256": "e968ea9567684117d189e74dec622bf417ead6f2611105a82a6f6c5029185253"
+    }
+  },
+  "window": {
+    "startSeconds": 0,
+    "endSeconds": 7,
+    "boundary": "[start,end)",
+    "maxRows": 20000
+  },
+  "profile": "Bounded COMTRADE-1999 ASCII input; declared-side physical values; no absolute-time claim"
+}

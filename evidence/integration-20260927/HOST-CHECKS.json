@@ -1,0 +1,53 @@
+{
+  "result": "PASS",
+  "recordedAt": "2026-09-27T13:09:48.268Z",
+  "work": "D:\\CodexLocal\\ban\\work\\substantive-20260927\\temp\\oscbridge-host-Z7baO8",
+  "checks": [
+    {
+      "name": "valid public window publishes an IPC file",
+      "expectedExit": 0,
+      "actualExit": 0,
+      "stderr": "",
+      "outputExists": true
+    },
+    {
+      "name": "existing output remains byte-identical",
+      "expectedExit": 2,
+      "actualExit": 2,
+      "stderr": "输出路径已存在；请选择新路径",
+      "outputExists": true
+    },
+    {
+      "name": "output cannot overwrite the CFG input",
+      "expectedExit": 2,
+      "actualExit": 2,
+      "stderr": "输出路径已存在；请选择新路径",
+      "outputExists": true
+    },
+    {
+      "name": "malformed record publishes no output",
+      "expectedExit": 2,
+      "actualExit": 2,
+      "stderr": "Rejected(\"dat\", 1, \"expected 27 fields, found 26\")",
+      "outputExists": false
+    },
+    {
+      "name": "window row budget failure publishes no output",
+      "expectedExit": 2,
+      "actualExit": 2,
+      "stderr": "Source(\n  Rejected(\n    \"window\",\n    0,\n    \"selected rows exceed max_rows; no truncation performed\",\n  ),\n)",
+      "outputExists": false
+    },
+    {
+      "name": "invalid UTF-8 publishes no output",
+      "expectedExit": 2,
+      "actualExit": 2,
+      "stderr": "The encoded data was not valid for encoding utf-8",
+      "outputExists": false
+    }
+  ],
+  "inputsUnchanged": true,
+  "noStagingArtifacts": true,
+  "independentNumericReference": false,
+  "scope": "Local child-process publication, no-overwrite and input/error boundaries; no power-loss durability or concurrent same-size input rewrite guarantee."
+}

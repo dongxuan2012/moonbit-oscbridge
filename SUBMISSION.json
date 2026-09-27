@@ -1,0 +1,31 @@
+{
+  "project": "oscbridge",
+  "originalSubmission": "cnnum",
+  "title": "COMTRADE录波检查与Arrow窗口交换",
+  "module": "localreview/oscbridge",
+  "version": "0.1.0",
+  "repository": null,
+  "license": "MIT",
+  "status": "旧题停止直接复申；本地替代已核验，正式换题与公开待团队办理",
+  "acceptance": "not established",
+  "localChangesPublished": false,
+  "actualUsersClaimed": false,
+  "remoteCIRunByThisTask": false,
+  "topicChangeApproved": false,
+  "publicRepositoryCreated": false,
+  "localModuleNameNeedsReview": true,
+  "proposalLines": 17,
+  "metadataReviewedOn": "2026-09-27",
+  "currentEvidence": "evidence/integration-20260927/LOCAL-CHECKS.json",
+  "currentValidation": "evidence/integration-20260927/LOCAL-CHECKS.json",
+  "useCase": "一组CFG/DAT接收检查，保留样本/时间/标定语义后按窗口交给现成Arrow消费者",
+  "diff": "复用已发布MoonArrow；承认python-comtrade及OscGrid现有读取/切窗，不申报格式、算法或IPC编码原创",
+  "remainingRisk": "仅1999 ASCII单速率零skew的有界profile；无UTC、全标准、故障诊断或采用方；正式换题待办理",
+  "reviewDecision": "停止窄CNY适配的独立复申，替换为有独立参考的COMTRADE接收与列式交换",
+  "previousProject": {
+    "sourcePath": "outputs/repos/moonbit-cnnum",
+    "version": "0.7.1",
+    "commit": "bab3fcccd37320999d0ba6cc209c0abe7c2b753d",
+    "preserved": true
+  }
+}

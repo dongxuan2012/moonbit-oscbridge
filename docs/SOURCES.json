@@ -1,0 +1,37 @@
+{
+  "observedOn": "2026-09-27",
+  "role": "Source and license inventory for a bounded experiment; not an adoption claim",
+  "dataset": {
+    "title": "A Dataset of Real-World Oscillograms from Electric Power Grids",
+    "creatorsAsListed": ["Evdakov Aleksey", "Andrey Makoldin", "Aleksandr Kovalenko", "Galina Filatova", "Andrey Yablokov"],
+    "metadataApi": "https://api.figshare.com/v2/articles/28465427",
+    "observedVersion": 6,
+    "doi": "10.6084/m9.figshare.28465427.v6",
+    "license": "CC BY 4.0",
+    "licenseUrl": "https://creativecommons.org/licenses/by/4.0/",
+    "archive": "Labeled_raw_v1.1.7z",
+    "download": "https://ndownloader.figshare.com/files/60073955",
+    "archiveSha256": "33a9fae8e21446b40a3099e6ffa733b679af4f3df4d4ce90aa4b06aeddf45ff8",
+    "record": "Labeled_raw_v1.1/4bbe281f8abafac243fafb0a0c2f047c",
+    "cfgSha256": "656bc0a07bb4c422bd4bd3e14fd607dfd668fe8d0362c28c4c95e73096f36de2",
+    "datSha256": "e968ea9567684117d189e74dec622bf417ead6f2611105a82a6f6c5029185253",
+    "transformationUnderTest": "Preserve original sample numbers and DAT ticks; select relative-time windows; carry raw analog values, declared-side a*raw+b values, and boolean status fields into Arrow IPC with channel calibration metadata.",
+    "originalArchiveBundled": false,
+    "recordEventClassification": "Not verified; do not infer natural fault or diagnosis",
+    "absoluteTime": "Not verified; source year 0001 is retained as text and is not interpreted as UTC"
+  },
+  "runtimeDependency": {
+    "module": "shunge/arrow",
+    "version": "0.1.0",
+    "license": "MIT",
+    "url": "https://mooncakes.io/docs/shunge/arrow@0.1.0",
+    "responsibility": "Arrow schema, typed columns, and IPC encoding; not reimplemented by this project"
+  },
+  "independentReference": {
+    "package": "comtrade",
+    "version": "0.1.2",
+    "license": "MIT",
+    "url": "https://pypi.org/project/comtrade/0.1.2/",
+    "responsibility": "Independent full-record numeric/status/time comparison; verification only"
+  }
+}

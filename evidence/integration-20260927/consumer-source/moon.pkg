@@ -1,0 +1,6 @@
+import {
+  "localreview/oscbridge" @comtrade,
+  "localreview/oscbridge/arrow" @adapter,
+  "shunge/arrow" @arrow,
+  "moonbitlang/core/debug",
+}

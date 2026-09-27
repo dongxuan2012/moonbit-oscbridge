@@ -1,0 +1,22 @@
+// Generated using `moon info`, DON'T EDIT IT
+package "localreview/oscbridge/arrow"
+
+import {
+  "localreview/oscbridge",
+  "moonbitlang/core/debug",
+}
+
+// Values
+pub fn write_window(@oscbridge.Recording, Double, Double, Int) -> Bytes raise ArrowExportError
+
+// Errors
+pub(all) suberror ArrowExportError {
+  Source(@oscbridge.ComtradeError)
+  Ipc(@shunge/arrow.ArrowError)
+} derive(@debug.Debug)
+
+// Types and methods
+
+// Type aliases
+
+// Traits
