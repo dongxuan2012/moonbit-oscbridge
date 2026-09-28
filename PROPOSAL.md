@@ -1,5 +1,5 @@
 # COMTRADE 录波检查与 Arrow 窗口交换
-本地替代候选，原申报 cnnum；正式换题和公开仓库由团队办理，未获批准。
+本地替代候选，原申报 cnnum；模块名 `dongxuan2012/oscbridge` 按拟交付账号命名，账号归属、正式换题和公开仓库仍须团队核实，未获批准。
 旧申报的“MoonBit 生态没有中文数字库”表述撤回，承认 bodymate/zhnum 等现有能力，保留旧源码而停止独立复申旧题。
 新任务是将一对电力录波 CFG/DAT 检查后，按相对时间窗口送入现成 Arrow 数据消费流程。
 输入限 COMTRADE-1999 ASCII 单速率、零 skew 的明确 profile；不称完整 IEEE C37.111 实现。
