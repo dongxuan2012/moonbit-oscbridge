@@ -40,7 +40,7 @@
   },
   "dependencies": {
     "prototype": {
-      "module": "localreview/oscbridge",
+      "module": "dongxuan2012/oscbridge",
       "versionInLocalMoonMod": "0.1.0",
       "path": "D:/CodexLocal/ban/work/substantive-20260927/oscbridge-prototype",
       "registryInstalled": false,

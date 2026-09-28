@@ -1,6 +1,6 @@
 {
   "date": "2026-09-27",
-  "prototype": "localreview/oscbridge@0.1.0",
+  "prototype": "dongxuan2012/oscbridge@0.1.0",
   "scope": "root MoonBit parser/window tests only",
   "toolchain": {"version": "moon 0.1.20260904", "revision": "94521db", "feature_flags": ["rr_moon_mod", "rr_moon_pkg"]},
   "tests": [

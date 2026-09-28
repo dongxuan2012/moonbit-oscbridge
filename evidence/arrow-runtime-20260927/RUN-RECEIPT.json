@@ -2,9 +2,9 @@
   "status": "PASS",
   "stage": "local COMTRADE-to-MoonArrow prototype; not part of the 20-project delivery yet",
   "module": {
-    "name": "localreview/oscbridge",
+    "name": "dongxuan2012/oscbridge",
     "version": "0.1.0",
-    "reusableApi": "localreview/oscbridge/arrow.write_window(Recording, start_seconds, end_seconds, max_rows) -> Bytes raise ArrowExportError"
+    "reusableApi": "dongxuan2012/oscbridge/arrow.write_window(Recording, start_seconds, end_seconds, max_rows) -> Bytes raise ArrowExportError"
   },
   "dependency": {
     "module": "shunge/arrow",
@@ -26,7 +26,7 @@
     {
       "argv": "moon tree",
       "exitCode": 0,
-      "purpose": "resolved localreview/oscbridge -> shunge/arrow@0.1.0 under MOON_HOME=D:\\CodexLocal\\ban\\work\\moon"
+      "purpose": "resolved dongxuan2012/oscbridge -> shunge/arrow@0.1.0 under MOON_HOME=D:\\CodexLocal\\ban\\work\\moon"
     },
     {
       "argv": "moon check --target js cmd/arrow",

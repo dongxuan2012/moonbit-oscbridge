@@ -1,7 +1,7 @@
 {
   "status": "PASS",
   "recordedAt": "2026-09-27T13:20:06.563307+00:00",
-  "module": "localreview/oscbridge",
+  "module": "dongxuan2012/oscbridge",
   "version": "0.1.0",
   "localOnly": true,
   "officialApproval": "not established",

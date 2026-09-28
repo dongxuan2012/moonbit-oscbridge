@@ -1,6 +1,6 @@
 # COMTRADE to MoonArrow prototype result
 
-**Local prototype only.** The trial is a reusable engineering task, not evidence of adoption, an award, or official approval. The public API is `localreview/oscbridge/arrow.write_window(recording, start_seconds, end_seconds, max_rows)`, implemented in [window_to_ipc.mbt](../../arrow/window_to_ipc.mbt). The [JS bridge](../../cmd/arrow/arrow_bridge.mbt) exposes the byte result; bounded input reads and exclusive file publication stay in the Node host. IPC is written by the published `shunge/arrow@0.1.0` `write_file` API.
+**Local prototype only.** The trial is a reusable engineering task, not evidence of adoption, an award, or official approval. The public API is `dongxuan2012/oscbridge/arrow.write_window(recording, start_seconds, end_seconds, max_rows)`, implemented in [window_to_ipc.mbt](../../arrow/window_to_ipc.mbt). The [JS bridge](../../cmd/arrow/arrow_bridge.mbt) exposes the byte result; bounded input reads and exclusive file publication stay in the Node host. IPC is written by the published `shunge/arrow@0.1.0` `write_file` API.
 
 The fixed OscGrid `Labeled_raw_v1.1` pair is CC BY 4.0. Its archive, CFG, and DAT SHA-256 fingerprints and attribution URLs are in [RUN-RECEIPT.json](RUN-RECEIPT.json); the source archive is not included here. This pair declares COMTRADE-1999 ASCII, 10,400 rows, 12 analog channels, and 13 status channels. No absolute-time claim is made: both CFG timestamps say `01/01/0001, 01:01:01.000000`.
 

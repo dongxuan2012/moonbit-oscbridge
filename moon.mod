@@ -1,4 +1,4 @@
-name = "localreview/oscbridge"
+name = "dongxuan2012/oscbridge"
 
 version = "0.1.0"
 

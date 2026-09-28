@@ -2,7 +2,7 @@
   "project": "oscbridge",
   "originalSubmission": "cnnum",
   "title": "COMTRADE录波检查与Arrow窗口交换",
-  "module": "localreview/oscbridge",
+  "module": "dongxuan2012/oscbridge",
   "version": "0.1.0",
   "repository": null,
   "license": "MIT",

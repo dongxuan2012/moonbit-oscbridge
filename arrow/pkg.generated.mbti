@@ -1,8 +1,8 @@
 // Generated using `moon info`, DON'T EDIT IT
-package "localreview/oscbridge/arrow"
+package "dongxuan2012/oscbridge/arrow"
 
 import {
-  "localreview/oscbridge",
+  "dongxuan2012/oscbridge",
   "moonbitlang/core/debug",
 }
 

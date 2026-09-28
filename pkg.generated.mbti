@@ -1,5 +1,5 @@
 // Generated using `moon info`, DON'T EDIT IT
-package "localreview/oscbridge"
+package "dongxuan2012/oscbridge"
 
 import {
   "moonbitlang/core/debug",

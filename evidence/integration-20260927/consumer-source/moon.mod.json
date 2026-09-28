@@ -1,8 +1,8 @@
 {
-  "name": "localreview/oscbridge-consumer",
+  "name": "dongxuan2012/oscbridge-consumer",
   "version": "0.1.0",
   "deps": {
-    "localreview/oscbridge": {
+    "dongxuan2012/oscbridge": {
       "path": "../../.."
     },
     "shunge/arrow": "0.1.0"
