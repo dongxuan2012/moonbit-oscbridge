@@ -1,0 +1,17 @@
+{
+  "date": "2026-09-28",
+  "project": "moonbit-oscbridge",
+  "compiler": "moonc v0.10.14+7d59c7ec9",
+  "sourceArchiveSha256": "33a9fae8e21446b40a3099e6ffa733b679af4f3df4d4ce90aa4b06aeddf45ff8",
+  "sourceCfgSha256": "656bc0a07bb4c422bd4bd3e14fd607dfd668fe8d0362c28c4c95e73096f36de2",
+  "sourceDatSha256": "e968ea9567684117d189e74dec622bf417ead6f2611105a82a6f6c5029185253",
+  "independentReaders": ["comtrade 0.1.2", "PyArrow 25.0.1"],
+  "python": "3.12.14",
+  "result": "passed",
+  "full": {"rows": 10400, "columns": 40, "sha256": "64331726deea9fc43411bad998e0d6de097ce879cb4e9841b029a9f14c1fa6fb"},
+  "window": {"rows": 160, "startSeconds": 1, "endSeconds": 1.1, "sha256": "6caef4c354ab2baeb115cbef6e9d2399a457042dffb3a48654fa1c124202497d"},
+  "emptyWindow": {"rows": 0, "sha256": "657f2a2b3a6d118eb367560eb3f2fbe6c11178d7910434535dc16107d74bfcae"},
+  "compared": {"sampleNumbers": 10400, "rawTicks": 10400, "analogRawValues": 124800, "analogScaledValues": 124800, "statusValues": 135200},
+  "hostChecks": "6/6 passed; malformed input and overwrite attempts publish no new output",
+  "scope": "One fixed public COMTRADE-1999 ASCII record; no claim of all revisions, binary DAT, absolute UTC, or field deployment"
+}

@@ -44,6 +44,6 @@ let ipc = @oscbridge_arrow.write_window(recording, 1.0, 1.1, 10000)
 
 ## 可复现输入与证据
 
-公开样本、许可、固定哈希与获取步骤见 [USE-CASE.md](USE-CASE.md)；核验状态只以 `evidence/` 中的实际回执为准。支持 COMTRADE-1999 ASCII 单速率、零 skew 的严格子集，保留 DAT 相对时间与 P/S 声明侧；不宣称完整标准兼容、UTC 对齐、全来源适配或真实用户采用。
+公开样本、许可、固定哈希与获取步骤见 [USE-CASE.md](USE-CASE.md)；核验状态只以 `evidence/` 中的实际回执为准。升级到 moonc 0.10.14 后，10400 行公开记录与 PyArrow/comtrade 的复核结果见 [2026-09-28 回执](evidence/acceptance-20260928/OSC-PUBLIC-RECHECK.json)。支持 COMTRADE-1999 ASCII 单速率、零 skew 的严格子集，保留 DAT 相对时间与 P/S 声明侧；不宣称完整标准兼容、UTC 对齐、全来源适配或真实用户采用。
 
 代码采用 MIT；公开输入及其派生 IPC 采用源数据 CC BY 4.0 要求。原始 95 MB 归档不随代码分发，署名与变换说明见 [THIRD-PARTY-NOTICES.md](THIRD-PARTY-NOTICES.md)。
