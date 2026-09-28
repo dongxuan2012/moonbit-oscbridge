@@ -47,3 +47,20 @@ let ipc = @oscbridge_arrow.write_window(recording, 1.0, 1.1, 10000)
 公开样本、许可、固定哈希与获取步骤见 [USE-CASE.md](USE-CASE.md)；核验状态只以 `evidence/` 中的实际回执为准。升级到 moonc 0.10.14 后，10400 行公开记录与 PyArrow/comtrade 的复核结果见 [2026-09-28 回执](evidence/acceptance-20260928/OSC-PUBLIC-RECHECK.json)。支持 COMTRADE-1999 ASCII 单速率、零 skew 的严格子集，保留 DAT 相对时间与 P/S 声明侧；不宣称完整标准兼容、UTC 对齐、全来源适配或真实用户采用。
 
 代码采用 MIT；公开输入及其派生 IPC 采用源数据 CC BY 4.0 要求。原始 95 MB 归档不随代码分发，署名与变换说明见 [THIRD-PARTY-NOTICES.md](THIRD-PARTY-NOTICES.md)。
+
+## 本地验收与公开交付（2026-09-28）
+
+核心实现使用 MoonBit；[固定编译器](.moonbit-version)为 `moonc 0.10.14+7d59c7ec9`。先按本文安装宿主依赖、运行 `moon update`，再从仓库根目录执行以下与 [CI](.github/workflows/ci.yml) 对齐的检查；可运行任务和适用边界见本文前面的示例与说明。
+
+```sh
+moon check --target js
+moon check --target wasm-gc
+moon test --target js
+moon test --target wasm-gc
+moon build --target js --release cmd/arrow
+moon package
+```
+
+本地核验：JS/Wasm-GC 各 6 项测试、仓内两行 Arrow 示例通过；10400 行公开录波又经独立 COMTRADE 读取器与 PyArrow 核对，另有 6 项宿主失败边界检查。 `moon package` 已完成离线打包预检，它不等于已发布到 Mooncakes。
+
+公开交付（2026-09-28 核对）：尚无本项目正式公开仓库 URL 或 Mooncakes 版本；模块名 `localreview/oscbridge` 是本地验证命名空间，正式发布前须改成对应账号的名称；换题资格、仓库、公开 CI 和首次发布均待团队办理，不能沿用旧题仓库链接。相关远端 CI 与赛事结果仍需以实际记录核对。项目许可见 [LICENSE](LICENSE)；如使用第三方材料，其来源和许可见仓内相应说明。
