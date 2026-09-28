@@ -15,11 +15,11 @@ jobs:
       - run: moon version --all
       - run: moon update
       - run: moon fmt --check
-      - run: moon check --target js
-      - run: moon check --target wasm-gc
-      - run: moon test --target js
-      - run: moon test --target wasm-gc
-      - run: moon build --target js --release cmd/arrow
+      - run: moon check --target js --deny-warn
+      - run: moon check --target wasm-gc --deny-warn
+      - run: moon test --target js --deny-warn
+      - run: moon test --target wasm-gc --deny-warn
+      - run: moon build --target js --release cmd/arrow --deny-warn
       - run: node examples/small-window.mjs
       - run: moon info
       - run: git diff --exit-code -- '*.mbti'
