@@ -6,6 +6,9 @@ pub suberror ComtradeError {
 } derive(@debug.Debug)
 
 ///|
+pub extend ComtradeError with @debug.Debug::{to_repr}
+
+///|
 /// Analog CFG metadata. `scaled` yields a*raw+b on the side declared by
 /// `pors`; it never applies a primary/secondary ratio conversion. Raw lexemes
 /// remain available for audit and output metadata.

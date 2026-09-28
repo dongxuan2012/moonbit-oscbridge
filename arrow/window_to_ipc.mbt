@@ -6,6 +6,9 @@ pub(all) suberror ArrowExportError {
 } derive(@debug.Debug)
 
 ///|
+pub extend ArrowExportError with @debug.Debug::{to_repr}
+
+///|
 fn kv(key : String, value : String) -> @moonarrow.KeyValue {
   @moonarrow.KeyValue::{ key, value: Some(value), }
 }

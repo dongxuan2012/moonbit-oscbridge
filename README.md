@@ -29,6 +29,8 @@ moon build --target js --release cmd/arrow
 node bin/oscbridge.mjs export input.cfg input.dat new-window.arrow 1 1.1 10000
 ```
 
+不下载公开大文件也能运行最小样例：`node examples/small-window.mjs`。它读取仓库内两行合成 CFG/DAT，抽取第二行并检查生成的 Arrow 文件；CI 每次提交都运行此样例。
+
 输出必须是新文件名，所在目录须存在并支持硬链接。窗口是 `[1,1.1)`；预算不足时报错，不截断。成功时 stdout 给出输入和 IPC 哈希回执，失败返回非零。
 
 MoonBit 程序导入根包与 `/arrow` 包即可使用，不必经过 Node 文件入口：

@@ -36,7 +36,7 @@ fn parse_rejected(
   expected_section : String,
 ) -> Bool {
   try {
-    ignore(parse(cfg, dat))
+    ignore(@oscbridge.parse(cfg, dat))
     false
   } catch {
     Rejected(section, _, _) => section == expected_section
@@ -45,7 +45,7 @@ fn parse_rejected(
 
 ///|
 test "single-rate record preserves source metadata and window identity" {
-  let recording = parse(
+  let recording = @oscbridge.parse(
     fixture_cfg("1000", 2, "-100", "100", "0", "1"),
     "1,0,3,0\n2,1000,4,1",
   )
@@ -71,7 +71,7 @@ test "single-rate record preserves source metadata and window identity" {
 
 ///|
 test "window uses half-open bounds and caller-owned sample arrays" {
-  let recording = parse(
+  let recording = @oscbridge.parse(
     fixture_cfg("1000", 2, "-100", "100", "0", "1"),
     "1,0,3,0\n2,1000,4,1",
   )
@@ -100,7 +100,7 @@ test "window uses half-open bounds and caller-owned sample arrays" {
 
 ///|
 test "one raw tick cadence tolerance is accepted and larger mismatch rejected" {
-  let within = parse(
+  let within = @oscbridge.parse(
     fixture_cfg("1000", 2, "-100", "100", "0", "1"),
     "1,0,3,0\n2,1001,4,1",
   )

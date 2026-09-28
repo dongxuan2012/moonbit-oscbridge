@@ -12,6 +12,7 @@ pub fn parse(String, String) -> Recording raise ComtradeError
 pub suberror ComtradeError {
   Rejected(String, Int, String)
 } derive(@debug.Debug)
+pub fn ComtradeError::to_repr(Self) -> @debug.Repr
 
 // Types and methods
 pub(all) struct AnalogChannel {
