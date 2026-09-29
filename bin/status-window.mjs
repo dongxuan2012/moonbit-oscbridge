@@ -19,7 +19,7 @@ try{
   const [out,c,s,pre,post,limit='10000']=args;
   const channel=integer(c,1,2147483647),sample=integer(s,2,200000),before=integer(pre,0,200000),after=integer(post,0,200000),maxRows=integer(limit,1,200000);
   const bytes=Buffer.from(export_transition_ipc(cfg.text,dat.text,channel,sample,before,after,maxRows));
-  if(bytes.length>64*1024*1024||bytes.subarray(0,6).toString()!=='ARROW1')throw Error('Invalid IPC result');
+  if(bytes.length<12||bytes.length>64*1024*1024||bytes.subarray(0,6).toString()!=='ARROW1'||bytes.subarray(-6).toString()!=='ARROW1')throw Error('Invalid IPC result');
   const output=publishNew(out,bytes);
   console.log(JSON.stringify({source,output,sha256:hash(bytes),channel,sample,beforeRows:before,afterRows:after,rows:before+after+1},null,2));
  }
