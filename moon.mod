@@ -13,3 +13,5 @@ keywords = [ "comtrade", "arrow", "waveform", "data-validation" ]
 import {
   "shunge/arrow@0.1.0",
 }
+
+repository = "https://github.com/dongxuan2012/moonbit-oscbridge"
