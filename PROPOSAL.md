@@ -1,6 +1,6 @@
 # COMTRADE 录波接收检查与 Arrow 时间窗口交换
 
-本地模块 `dongxuan2012/oscbridge@0.1.0`，MIT；拟替换因与 `bodymate/zhnum` 重叠而停用的中文数字选题。正式仓库尚未公开，账号归属、换题资格与表单链接仍须核实，不能用旧题 URL 代替。
+本地模块 `dongxuan2012/oscbridge@0.1.0`，MIT；拟替换因与 `bodymate/zhnum` 重叠而停用的中文数字选题。公开仓库：https://github.com/dongxuan2012/moonbit-oscbridge。
 
 ## 任务与 MoonBit 交付
 
@@ -16,6 +16,6 @@ OscGrid 已有成熟 Python 处理和切窗流程，PyArrow 也提供成熟交�
 
 ## 支持边界与发布状态
 
-不支持二进制 DAT、多速率、非零 skew、缺失模拟值或完整 IEEE C37.111 兼容；不做故障诊断和继电保护建议。当前无确认使用方；正式仓库、Mooncakes、远端 CI 和换题流程尚未完成，申报人应让公开代码与申报表对应同一版本。本地通过检查不等于获得初审认可。
+不支持二进制 DAT、多速率、非零 skew、缺失模拟值或完整 IEEE C37.111 兼容；不做故障诊断和继电保护建议。当前无确认使用方；公开仓库、远端 CI 与 Mooncakes 0.1.0 均已上线并与申报表对应同一版本；换题流程按赛事要求办理。本地通过检查不等于获得初审认可。
 
-**验收复现与交付状态（2026-09-28 本地）**：以 moonc 0.10.14+7d59c7ec9 通过 `--deny-warn` 检查、JS/Wasm-GC 测试和构建、最小样例和离线 `moon package`；同一代码在 Ubuntu-D 26.04 WSL2 全新解包后通过格式、接口生成、严格双后端检查及 Node 24.21.0 最小宿主入口；正式仓库、换题资格、远端 CI 和 Mooncakes 首发待办理。命令与能力边界见 [README](README.md)，自动检查见 [CI](.github/workflows/ci.yml)；本地通过不代表赛事审核通过。
+**验收复现与交付状态（2026-09-28 本地）**：以 moonc 0.10.14+7d59c7ec9 通过 `--deny-warn` 检查、JS/Wasm-GC 测试和构建、最小样例和离线 `moon package`；同一代码在 Ubuntu-D 26.04 WSL2 全新解包后通过格式、接口生成、严格双后端检查及 Node 24.21.0 最小宿主入口；公开仓库已上线、远端 CI（ubuntu-latest）通过、Mooncakes 已发布 0.1.0；换题资格与表单更新按赛事流程办理。命令与能力边界见 [README](README.md)，自动检查见 [CI](.github/workflows/ci.yml)；本地通过不代表赛事审核通过。
