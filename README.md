@@ -80,6 +80,6 @@ moon package
 
 跨平台复核（2026-09-28，本地 Ubuntu-D 26.04 WSL2）：从当时的源码归档全新解包，固定 `moonc 0.10.14+7d59c7ec9` 下通过 `moon update`、`moon fmt --check`、`moon info`、严格检查、JS/Wasm-GC 测试及 JS release 构建；Node 24.21.0 跑通本仓一条宿主入口。本次补记仅修改文档，代码与 CI 未变；复核日志在本地交接包中，公开提交后的 GitHub Actions 仍须单独核对。
 
-本地核验：JS/Wasm-GC 各 6 项测试、仓内两行 Arrow 示例通过；10400 行公开录波又经独立 COMTRADE 读取器与 PyArrow 核对，另有 6 项宿主失败边界检查。 `moon package` 已完成离线打包预检，它不等于已发布到 Mooncakes。
+本地 0.2.0 核验：JS/Wasm-GC 各 8 项测试、仓内两行 Arrow 和状态事件窗口示例通过；10400 行公开录波又经独立 COMTRADE 读取器与 PyArrow 核对，另有 6 项宿主失败边界检查。 `moon package` 已完成离线打包预检，它不等于已发布到 Mooncakes。
 
 **公开状态（2026-09-29 核对）**：GitHub [公开仓库](https://github.com/dongxuan2012/moonbit-oscbridge)、[Mooncakes 0.1.0](https://mooncakes.io/docs/dongxuan2012/oscbridge@0.1.0) 已可访问；[CI 成功记录](https://github.com/dongxuan2012/moonbit-oscbridge/actions/runs/36561824200) 对应 `e44f0bb7fd3d`。本地 0.2.0 尚未推送或发布；所列远端 CI 只覆盖旧公开提交。报名表一致性及赛事审核结果尚未核实。
