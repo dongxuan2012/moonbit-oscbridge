@@ -277,3 +277,25 @@ pub fn write_window(
   // display names while field metadata retains the actual channel identity.
   build_ipc(recording, window, start_seconds, end_seconds)
 }
+
+///|
+/// Export a verified status edge with exact sample context using MoonArrow.
+pub fn write_transition_window(
+  recording : @comtrade.Recording,
+  channel_number : Int,
+  sample_number : Int,
+  before_rows : Int,
+  after_rows : Int,
+  max_rows : Int,
+) -> Bytes raise ArrowExportError {
+  let window = recording.transition_window(
+    channel_number,
+    sample_number,
+    before_rows,
+    after_rows,
+    max_rows~,
+  ) catch {
+    error => raise ArrowExportError::Source(error)
+  }
+  build_ipc(recording, window, window.start_seconds, window.end_seconds)
+}

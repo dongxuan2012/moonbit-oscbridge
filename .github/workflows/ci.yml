@@ -21,6 +21,7 @@ jobs:
       - run: moon test --target wasm-gc --deny-warn
       - run: moon build --target js --release cmd/arrow --deny-warn
       - run: node examples/small-window.mjs
+      - run: node examples/status-window.mjs
       - run: moon info
       - run: git diff --exit-code -- '*.mbti'
       - uses: actions/setup-python@v5
@@ -38,3 +39,4 @@ jobs:
           node bin/oscbridge.mjs export work/source/sample.cfg work/source/sample.dat work/empty.arrow 1 1 10000
           python tools/verify_arrow.py --cfg work/source/sample.cfg --dat work/source/sample.dat --archive work/source/Labeled_raw_v1.1.7z --full work/full.arrow --window work/window.arrow --empty work/empty.arrow
           node bin/check-host.mjs work/source/sample.cfg work/source/sample.dat work
+          python tools/verify_status_events.py --cfg work/source/sample.cfg --dat work/source/sample.dat --out work/events

@@ -2,7 +2,7 @@
 
 项目仓库：[https://github.com/dongxuan2012/moonbit-oscbridge](https://github.com/dongxuan2012/moonbit-oscbridge)
 
-模块 `dongxuan2012/oscbridge@0.1.0` 已公开；由申报人以个人项目办理旧中文数字选题的换题。公开发布与赛事认可分别核对。
+模块 `dongxuan2012/oscbridge`；本地新增版本 **0.2.0**，公开版本仍为 **0.1.0**；由申报人以个人项目办理旧中文数字选题的换题。公开发布与赛事认可分别核对。
 
 将电力录波的一对 CFG/DAT 作为一个整体检查，按相对时间选择窗口，把样本身份、原始计数、声明侧标定值和状态字段交给现有 MoonArrow 写入 Arrow IPC。下游可以用已有 Arrow 工具消费数据，不必重新实现 COMTRADE 读取和单位映射。
 
@@ -44,6 +44,21 @@ let ipc = @oscbridge_arrow.write_window(recording, 1.0, 1.1, 10000)
 
 上述代码位于可抛错函数中；导入别名分别配置为 `@oscbridge` 和 `@oscbridge_arrow`。调用方可先通过 `Recording::window` 检查窗口，再把 `Bytes` 交给自己的存储层。
 
+## 从状态变化定位交换窗口
+
+0.2.0 新增 MoonBit `Recording::status_transitions` 和 `transition_window`，以及直接复用 MoonArrow 的 `write_transition_window`。它们先找出相邻样本中实际发生的状态变化，再按源采样号抽取变化前后的精确行数，供离线检查或数据集制作；不把第一行与 CFG 正常状态的差异推断成一次事件，不把状态变化认定为故障。
+
+```sh
+# 按前文构建 release cmd/arrow 后
+node bin/status-window.mjs scan input.cfg input.dat 0 7
+node bin/status-window.mjs export input.cfg input.dat event.arrow 1 1480 16 16
+node examples/status-window.mjs
+```
+
+第二条示例要求通道 1 在第 1480 个样本确有变化，导出前 16 行、变化行、后 16 行，共 33 行。身份错误、上下文不足、事件或行数超预算均拒绝，不静默截断。具体合同和公开数据复现见 [状态窗口](docs/STATUS-WINDOW.md)。
+
+在固定的 10400 行公开记录中，4 次状态变化与独立 python-comtrade 一致；导出的 4 份 33 行、40 列窗口由 PyArrow 独立读取，5280 个单元逐项核对。这里是数据交换用例，未声称外部用户采用。回执见 [本轮验证](evidence/status-events-20260929.json)。
+
 ## 可复现输入与证据
 
 公开样本、许可、固定哈希与获取步骤见 [USE-CASE.md](USE-CASE.md)；核验状态只以 `evidence/` 中的实际回执为准。升级到 moonc 0.10.14 后，10400 行公开记录与 PyArrow/comtrade 的复核结果见 [2026-09-28 回执](evidence/acceptance-20260928/OSC-PUBLIC-RECHECK.json)。支持 COMTRADE-1999 ASCII 单速率、零 skew 的严格子集，保留 DAT 相对时间与 P/S 声明侧；不宣称完整标准兼容、UTC 对齐、全来源适配或真实用户采用。
@@ -67,4 +82,4 @@ moon package
 
 本地核验：JS/Wasm-GC 各 6 项测试、仓内两行 Arrow 示例通过；10400 行公开录波又经独立 COMTRADE 读取器与 PyArrow 核对，另有 6 项宿主失败边界检查。 `moon package` 已完成离线打包预检，它不等于已发布到 Mooncakes。
 
-**公开状态（2026-09-29 核对）**：GitHub [公开仓库](https://github.com/dongxuan2012/moonbit-oscbridge)、[Mooncakes 0.1.0](https://mooncakes.io/docs/dongxuan2012/oscbridge@0.1.0) 已可访问；[CI 成功记录](https://github.com/dongxuan2012/moonbit-oscbridge/actions/runs/36561824200) 对应 `e44f0bb7fd3d`。本次材料更新尚未推送；该远端 CI 对应所列公开提交。报名表一致性及赛事审核结果尚未核实。
+**公开状态（2026-09-29 核对）**：GitHub [公开仓库](https://github.com/dongxuan2012/moonbit-oscbridge)、[Mooncakes 0.1.0](https://mooncakes.io/docs/dongxuan2012/oscbridge@0.1.0) 已可访问；[CI 成功记录](https://github.com/dongxuan2012/moonbit-oscbridge/actions/runs/36561824200) 对应 `e44f0bb7fd3d`。本地 0.2.0 尚未推送或发布；所列远端 CI 只覆盖旧公开提交。报名表一致性及赛事审核结果尚未核实。

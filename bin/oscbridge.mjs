@@ -2,6 +2,7 @@
 import fs from 'node:fs';
 import path from 'node:path';
 import {createHash, randomUUID} from 'node:crypto';
+import {fileURLToPath} from 'node:url';
 
 const CFG_LIMIT = 1024 * 1024;
 const DAT_LIMIT = 32 * 1024 * 1024;
@@ -70,7 +71,7 @@ function publishNew(filename, bytes) {
 
 const usage = '用法: node bin/oscbridge.mjs export CFG DAT OUT.arrow START_SECONDS END_SECONDS [MAX_ROWS]';
 
-try {
+if(process.argv[1] && path.resolve(process.argv[1])===fileURLToPath(import.meta.url)) try {
   const args = process.argv.slice(2);
   if (args.length === 1 && args[0] === '--help') {
     console.log(usage);
@@ -112,3 +113,5 @@ try {
   console.error(error?.message || String(error));
   process.exitCode = 2;
 }
+
+export {readText, publishNew};

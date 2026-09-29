@@ -1,0 +1,138 @@
+{
+  "utc": "2026-09-29T12:36:32.439170+00:00",
+  "sourceCfgSha256": "656bc0a07bb4c422bd4bd3e14fd607dfd668fe8d0362c28c4c95e73096f36de2",
+  "sourceDatSha256": "e968ea9567684117d189e74dec622bf417ead6f2611105a82a6f6c5029185253",
+  "independentReaders": {
+    "comtrade": "0.1.2",
+    "pyarrow": "25.0.1"
+  },
+  "events": [
+    {
+      "channel_number": 1,
+      "sample_number": 1480,
+      "previous_sample_number": 1479,
+      "time_seconds": 0.924375,
+      "before": false,
+      "after": true
+    },
+    {
+      "channel_number": 4,
+      "sample_number": 1481,
+      "previous_sample_number": 1480,
+      "time_seconds": 0.925,
+      "before": true,
+      "after": false
+    },
+    {
+      "channel_number": 5,
+      "sample_number": 1482,
+      "previous_sample_number": 1481,
+      "time_seconds": 0.925625,
+      "before": false,
+      "after": true
+    },
+    {
+      "channel_number": 1,
+      "sample_number": 1491,
+      "previous_sample_number": 1490,
+      "time_seconds": 0.93125,
+      "before": true,
+      "after": false
+    }
+  ],
+  "outputs": [
+    {
+      "sample": 1480,
+      "channel": 1,
+      "rows": 33,
+      "columns": 40,
+      "sha256": "c1880ab32af22399ae21c80eff8b918d6c40be5a6f84ea7159d769414dff2d65",
+      "receipt": {
+        "source": {
+          "cfgSha256": "656bc0a07bb4c422bd4bd3e14fd607dfd668fe8d0362c28c4c95e73096f36de2",
+          "datSha256": "e968ea9567684117d189e74dec622bf417ead6f2611105a82a6f6c5029185253"
+        },
+        "output": "event-0.arrow",
+        "sha256": "c1880ab32af22399ae21c80eff8b918d6c40be5a6f84ea7159d769414dff2d65",
+        "channel": 1,
+        "sample": 1480,
+        "beforeRows": 16,
+        "afterRows": 16,
+        "rows": 33
+      }
+    },
+    {
+      "sample": 1481,
+      "channel": 4,
+      "rows": 33,
+      "columns": 40,
+      "sha256": "a96c8e5ce9dc283a04752dcf5662771cd3480185ec7234dfa27650975959f818",
+      "receipt": {
+        "source": {
+          "cfgSha256": "656bc0a07bb4c422bd4bd3e14fd607dfd668fe8d0362c28c4c95e73096f36de2",
+          "datSha256": "e968ea9567684117d189e74dec622bf417ead6f2611105a82a6f6c5029185253"
+        },
+        "output": "event-1.arrow",
+        "sha256": "a96c8e5ce9dc283a04752dcf5662771cd3480185ec7234dfa27650975959f818",
+        "channel": 4,
+        "sample": 1481,
+        "beforeRows": 16,
+        "afterRows": 16,
+        "rows": 33
+      }
+    },
+    {
+      "sample": 1482,
+      "channel": 5,
+      "rows": 33,
+      "columns": 40,
+      "sha256": "4985e501d07d5f2c9dd471438248fd6bb1bbb0b9553841491d5f246830d6d7a6",
+      "receipt": {
+        "source": {
+          "cfgSha256": "656bc0a07bb4c422bd4bd3e14fd607dfd668fe8d0362c28c4c95e73096f36de2",
+          "datSha256": "e968ea9567684117d189e74dec622bf417ead6f2611105a82a6f6c5029185253"
+        },
+        "output": "event-2.arrow",
+        "sha256": "4985e501d07d5f2c9dd471438248fd6bb1bbb0b9553841491d5f246830d6d7a6",
+        "channel": 5,
+        "sample": 1482,
+        "beforeRows": 16,
+        "afterRows": 16,
+        "rows": 33
+      }
+    },
+    {
+      "sample": 1491,
+      "channel": 1,
+      "rows": 33,
+      "columns": 40,
+      "sha256": "14fef651e59db40af22fa3246842e76b542713b9dcabffa914922d5c0578c8a6",
+      "receipt": {
+        "source": {
+          "cfgSha256": "656bc0a07bb4c422bd4bd3e14fd607dfd668fe8d0362c28c4c95e73096f36de2",
+          "datSha256": "e968ea9567684117d189e74dec622bf417ead6f2611105a82a6f6c5029185253"
+        },
+        "output": "event-3.arrow",
+        "sha256": "14fef651e59db40af22fa3246842e76b542713b9dcabffa914922d5c0578c8a6",
+        "channel": 1,
+        "sample": 1491,
+        "beforeRows": 16,
+        "afterRows": 16,
+        "rows": 33
+      }
+    }
+  ],
+  "checks": [
+    "4 independently located transitions",
+    "4 exact 33-row windows; every column compared",
+    "no first-row inference",
+    "false edge and unavailable context publish nothing",
+    "event budget rejects, not truncates",
+    "existing output preserved"
+  ],
+  "limits": [
+    "one public recording",
+    "no fault diagnosis or UTC alignment",
+    "no external adoption claim"
+  ]
+}

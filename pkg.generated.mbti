@@ -51,8 +51,10 @@ pub fn Recording::sampling_rate_hz(Self) -> Double
 pub fn Recording::start_datetime_raw(Self) -> String
 pub fn Recording::station_name(Self) -> String
 pub fn Recording::status_channels(Self) -> Array[StatusChannel]
+pub fn Recording::status_transitions(Self, Double, Double, max_events? : Int) -> Array[StatusTransition] raise ComtradeError
 pub fn Recording::time_multiplier(Self) -> Double
 pub fn Recording::total_channels(Self) -> Int
+pub fn Recording::transition_window(Self, Int, Int, Int, Int, max_rows? : Int) -> Window raise ComtradeError
 pub fn Recording::trigger_datetime_raw(Self) -> String
 pub fn Recording::window(Self, Double, Double, max_rows? : Int) -> Window raise ComtradeError
 
@@ -74,6 +76,19 @@ pub(all) struct StatusChannel {
   normal_state_raw : String
   cfg_line_raw : String
 }
+
+pub(all) struct StatusTransition {
+  channel_number : Int
+  sample_number : Int
+  previous_sample_number : Int
+  time_seconds : Double
+  before : Bool
+  after : Bool
+} derive(Eq, ToJson, @debug.Debug)
+pub fn StatusTransition::equal(Self, Self) -> Bool
+pub fn StatusTransition::not_equal(Self, Self) -> Bool
+pub fn StatusTransition::to_json(Self) -> Json
+pub fn StatusTransition::to_repr(Self) -> @debug.Repr
 
 pub(all) struct Window {
   start_seconds : Double
