@@ -4,15 +4,15 @@
   "title": "COMTRADE录波检查与Arrow窗口交换",
   "module": "dongxuan2012/oscbridge",
   "version": "0.1.0",
-  "repository": null,
+  "repository": "https://github.com/dongxuan2012/moonbit-oscbridge",
   "license": "MIT",
-  "status": "旧题停止直接复申；本地替代已核验，正式换题与公开待团队办理",
+  "status": "已公开对应版号及成功 CI；本轮材料仅本地修订，赛事审核结果待核实；换题是否批准待核实",
   "acceptance": "not established",
   "localChangesPublished": false,
   "actualUsersClaimed": false,
   "remoteCIRunByThisTask": false,
   "topicChangeApproved": false,
-  "publicRepositoryCreated": false,
+  "publicRepositoryCreated": true,
   "localModuleNameNeedsReview": true,
   "proposalLines": 21,
   "metadataReviewedOn": "2026-09-29",
@@ -27,5 +27,13 @@
     "version": "0.7.1",
     "commit": "bab3fcccd37320999d0ba6cc209c0abe7c2b753d",
     "preserved": true
-  }
+  },
+  "publicStatusCheckedOn": "2026-09-29",
+  "publishedVersion": "0.1.0",
+  "observedRemoteCiCommit": "e44f0bb7fd3dbb08af95314b13399a015ebae330",
+  "observedRemoteCiUrl": "https://github.com/dongxuan2012/moonbit-oscbridge/actions/runs/36561824200",
+  "observedRemoteCiConclusion": "success",
+  "currentCoreDiffersFromObservedCi": false,
+  "publishedCoreSourceComparedOn": "2026-09-29",
+  "publishedCoreSourceMatchesLocal": true
 }

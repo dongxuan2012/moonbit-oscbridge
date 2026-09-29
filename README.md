@@ -1,6 +1,8 @@
 # Oscbridge：COMTRADE 记录检查与 Arrow 窗口交换
 
-本地换题候选；尚未创建公开仓库。当前模块名 `dongxuan2012/oscbridge` 按拟交付账号命名，账号归属、正式仓库与报名换题仍须由申报人核实。
+项目仓库：[https://github.com/dongxuan2012/moonbit-oscbridge](https://github.com/dongxuan2012/moonbit-oscbridge)
+
+模块 `dongxuan2012/oscbridge@0.1.0` 已公开；由申报人以个人项目办理旧中文数字选题的换题。公开发布与赛事认可分别核对。
 
 将电力录波的一对 CFG/DAT 作为一个整体检查，按相对时间选择窗口，把样本身份、原始计数、声明侧标定值和状态字段交给现有 MoonArrow 写入 Arrow IPC。下游可以用已有 Arrow 工具消费数据，不必重新实现 COMTRADE 读取和单位映射。
 
@@ -65,4 +67,4 @@ moon package
 
 本地核验：JS/Wasm-GC 各 6 项测试、仓内两行 Arrow 示例通过；10400 行公开录波又经独立 COMTRADE 读取器与 PyArrow 核对，另有 6 项宿主失败边界检查。 `moon package` 已完成离线打包预检，它不等于已发布到 Mooncakes。
 
-公开交付（2026-09-28 核对）：尚无本项目正式公开仓库 URL 或 Mooncakes 版本；模块名 `dongxuan2012/oscbridge` 是拟交付账号形式的本地名称，正式发布前须核实账号归属和发布权限；换题资格、仓库、公开 CI 和首次发布均待申报人办理，不能沿用旧题仓库链接。相关远端 CI 与赛事结果仍需以实际记录核对。项目许可见 [LICENSE](LICENSE)；如使用第三方材料，其来源和许可见仓内相应说明。
+**公开状态（2026-09-29 核对）**：GitHub [公开仓库](https://github.com/dongxuan2012/moonbit-oscbridge)、[Mooncakes 0.1.0](https://mooncakes.io/docs/dongxuan2012/oscbridge@0.1.0) 已可访问；[CI 成功记录](https://github.com/dongxuan2012/moonbit-oscbridge/actions/runs/36561824200) 对应 `e44f0bb7fd3d`。本次材料更新尚未推送；该远端 CI 对应所列公开提交。报名表一致性及赛事审核结果尚未核实。

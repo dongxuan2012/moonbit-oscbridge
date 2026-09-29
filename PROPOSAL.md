@@ -16,6 +16,6 @@ OscGrid 已有成熟 Python 处理和切窗流程，PyArrow 也提供成熟交�
 
 ## 支持边界与发布状态
 
-不支持二进制 DAT、多速率、非零 skew、缺失模拟值或完整 IEEE C37.111 兼容；不做故障诊断和继电保护建议。当前无确认使用方；公开仓库、远端 CI 与 Mooncakes 0.1.0 均已上线并与申报表对应同一版本；换题流程按赛事要求办理。本地通过检查不等于获得初审认可。
+不支持二进制 DAT、多速率、非零 skew、缺失模拟值或完整 IEEE C37.111 兼容；不做故障诊断和继电保护建议。当前无确认使用方；公开仓库、远端 CI 与 Mooncakes 0.1.0 均已上线；申报表是否同步尚未核实；换题流程按赛事要求办理。本地通过检查不等于获得初审认可。
 
-**验收复现与交付状态（2026-09-28 本地）**：以 moonc 0.10.14+7d59c7ec9 通过 `--deny-warn` 检查、JS/Wasm-GC 测试和构建、最小样例和离线 `moon package`；同一代码在 Ubuntu-D 26.04 WSL2 全新解包后通过格式、接口生成、严格双后端检查及 Node 24.21.0 最小宿主入口；公开仓库已上线、远端 CI（ubuntu-latest）通过、Mooncakes 已发布 0.1.0；换题资格与表单更新按赛事流程办理。命令与能力边界见 [README](README.md)，自动检查见 [CI](.github/workflows/ci.yml)；本地通过不代表赛事审核通过。
+**公开状态（2026-09-29 核对）**：GitHub [公开仓库](https://github.com/dongxuan2012/moonbit-oscbridge)、[Mooncakes 0.1.0](https://mooncakes.io/docs/dongxuan2012/oscbridge@0.1.0) 已可访问；[CI 成功记录](https://github.com/dongxuan2012/moonbit-oscbridge/actions/runs/36561824200) 对应 `e44f0bb7fd3d`。本次材料更新尚未推送；该远端 CI 对应所列公开提交。报名表一致性及赛事审核结果尚未核实。
